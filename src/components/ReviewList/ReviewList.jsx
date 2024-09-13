@@ -50,26 +50,47 @@ function ReviewList() {
 
   const changeSortMethod = (event) => {
       setSortMethod(event.target.value)
+
   }
 
   const changeFilterMethod = (event) => {
     setFilterMethod(event.target.value)
   }
 
+  const reviewTypeSort = (sortMethod) => {
+    if (sortMethod === "top") {
+      return "Top "
+    } else if (sortMethod === "recent") {
+      return "Recent "
+    }
+  }
+
+  const reviewTypeFilter = (filterMethod) => {
+    if (filterMethod === "none") {
+      return ""
+    } else if (filterMethod === "verified") {
+      return "Verified "
+    } else if (filterMethod === "vine") {
+      return "Vine "
+    } 
+  }
+
   return (
     <>
-        <h3 className="review-list__title">Reviews from the United States</h3>
-        <form className="review-list__dropdowns">
-          <select name="sorting" id="sorting" className="review-list__sort" onChange={changeSortMethod}>
-            <option value="top">Top Reviews</option>
-            <option value="recent">Recent Reviews</option>
-          </select>
-          <select name="filtering" id="filtering" className="review-list__filter" onChange={changeFilterMethod}>
-            <option value="none">All Reviews</option>
-            <option value="verified">Verified purchase only</option>
-            <option value="vine">Vine reviewers only</option>
-          </select>
-        </form>
+        <div className="review-list__head">
+          <h3 className="review-list__title">{reviewTypeSort(sortMethod)} {reviewTypeFilter(filterMethod)} Reviews from the United States</h3>
+          <form className="review-list__dropdowns">
+            <select name="sorting" id="sorting" className="review-list__sort" onChange={changeSortMethod}>
+              <option value="top">Top Reviews</option>
+              <option value="recent">Recent Reviews</option>
+            </select>
+            <select name="filtering" id="filtering" className="review-list__filter" onChange={changeFilterMethod}>
+              <option value="none">All Reviews</option>
+              <option value="verified">Verified purchase only</option>
+              <option value="vine">Vine reviewers only</option>
+            </select>
+          </form>
+        </div>
         {
           reviewData.filter(filterFunction(filterMethod, filterParameter)).sort(sortFunction(sortMethod)).map((review) => (
             <Review key={review.id} data={review} />

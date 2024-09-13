@@ -2,14 +2,33 @@
 
 .review-list {
 
+    &__head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     &__title {
         padding-left: 5%;
         padding-right: 5%;
+        margin: 0;
+        font-size: 1.25rem;
     }
 
     &__dropdowns {
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 1rem;
+    }
+
+    &__sort, &__filter {
+        background-color: #efefef;
+        border: 1px #d8dbdb solid;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    &__filter {
+        margin-left: 1rem;
     }
 }
