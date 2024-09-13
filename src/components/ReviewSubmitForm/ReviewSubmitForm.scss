@@ -1,0 +1,137 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.review-form {
+  width: 80%;
+  font-family: $default-font-stack;
+  padding-bottom: 2rem;
+  &__section {
+    border-bottom: 2px solid $cloud;
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1.5rem;
+    @include tablet {
+      padding-right: 10%;
+      padding-left: 10%;
+    }
+  }
+  &__title {
+    padding-bottom: 1rem;
+  }
+  &__subtitle {
+    padding-bottom: 1rem;
+    &--headline {
+      padding-top: 1rem;
+    }
+    &--add-media {
+      padding-bottom: 0.3rem;
+    }
+  }
+  &__wrapper-1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  &__img-container {
+    display: flex;
+    padding-left: 1rem;
+  }
+  &__img {
+    object-fit: contain;
+    min-width: 3rem;
+  }
+  &__description {
+    font-size: 1rem;
+  }
+  &__stars {
+    display: flex;
+    // gap: 0.3rem;
+  }
+  &__star-input {
+    display: none;
+  }
+  &__star-image {
+    width: 2rem;
+  }
+  &__headline-input {
+    border-radius: 5px;
+    border: 1px solid $cloud;
+    min-width: 95%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &__subtext {
+    color: $grey;
+    padding-bottom: 2rem;
+    &--footer {
+      padding-top: 1rem;
+    }
+  }
+  &__add-media-label {
+    display: flex;
+  }
+  &__add-media-placeholder {
+    border: 2px dashed $cloud;
+    font-size: 4rem;
+    padding: 0.5rem 2rem;
+    border-radius: 6px;
+    color: $cloud;
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+  }
+  &__add-media-input {
+    display: none;
+  }
+  &__keywords-wrapper {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: 2rem;
+  }
+  &__keywords {
+    border: 1px solid $grey;
+    border-radius: 6px;
+    padding: 0.5rem;
+    flex: 1 1 150px;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    cursor: pointer;
+  }
+  &__review-description {
+    outline: none;
+    min-width: 100%;
+    min-height: 6rem;
+    border: 2px solid $cloud;
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    &:focus {
+      border-color: $cloud;
+    }
+  }
+  &__button-container {
+    // border: 1px solid red;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  &__button {
+    border-radius: 50px;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #ffd814;
+  }
+}
