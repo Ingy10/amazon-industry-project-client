@@ -2,7 +2,7 @@ import "./Review.scss";
 import Stars from "../Stars/Stars";
 import vine_badge from '../../assets/icons/prime__reviewer__badge.png'
 
-function Review({ data }) {
+function Review({ data, keywords }) {
 
   const timestampConverter = (timestamp) => {
     const rawDate = new Date(timestamp)

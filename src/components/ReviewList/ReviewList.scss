@@ -2,6 +2,9 @@
 
 .review-list {
 
+    padding-left: 5%;
+    padding-right: 5%;
+
     &__head {
         display: flex;
         flex-direction: row;
@@ -9,15 +12,11 @@
     }
 
     &__title {
-        padding-left: 5%;
-        padding-right: 5%;
         margin: 0;
         font-size: 1.25rem;
     }
 
     &__dropdowns {
-        padding-left: 5%;
-        padding-right: 5%;
         padding-bottom: 1rem;
     }
 
@@ -30,5 +29,38 @@
 
     &__filter {
         margin-left: 1rem;
+    }
+}
+
+.review-summary {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3rem;
+
+    &__title {
+        font-size: 1.5rem;
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    &__copy {
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    &__disclaimer {
+        color: #017185;
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    &__select {
+        margin: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-weight: bold;
     }
 }

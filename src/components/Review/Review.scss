@@ -1,8 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 
 .review {
-    padding-left: 5%;
-    padding-right: 5%;
 
     &__poster, &__heading {
         display: flex;
