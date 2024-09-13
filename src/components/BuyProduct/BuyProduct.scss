@@ -7,12 +7,49 @@
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  &__header {
+    padding: 1.5rem;
+  }
 
   &__deliver {
     &-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
     }
+  }
+
+  &__quantity {
+    height: 2rem;
+    width: 12.75rem;
+    margin: 1.5rem auto 1rem;
+    padding: 0 0.5rem;
+    background-color: #f0f2f2;
+    border: 1px solid #d5d9d9;
+    border-radius: 0.5rem;
+  }
+
+  &__add {
+    height: 2rem;
+    width: 12.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: #ffd814;
+    border-radius: 6.25rem;
+  }
+  &__buy {
+    height: 2rem;
+    width: 12.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: #ffa41c;
+    border-radius: 6.25rem;
   }
 }
