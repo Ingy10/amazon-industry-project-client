@@ -1,9 +1,12 @@
 import "./SubmitReviewPage.scss";
+import ReviewSubmitForm from "../../components/ReviewSubmitForm/ReviewSubmitForm";
 
 function SubmitReviewPage() {
   return (
     <>
-      <h1>Submit Review Page</h1>
+      <main className="submit-review-page">
+      <ReviewSubmitForm />
+      </main>
     </>
   );
 }
