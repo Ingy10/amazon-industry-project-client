@@ -89,6 +89,12 @@
   &__add-media-input {
     display: none;
   }
+  &__image-preview {
+    padding-left: 1rem;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+  }
   &__keywords-wrapper {
     display: flex;
     list-style-type: none;

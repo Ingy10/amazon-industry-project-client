@@ -11,6 +11,8 @@ function ReviewSubmitForm() {
   const [star4, setStar4] = useState(emptyStar);
   const [star5, setStar5] = useState(emptyStar);
   const [highlightedIds, setHighlightedIds] = useState("");
+  const [imageUploaded, setImageUploaded] = useState(null);
+  const [viewImage, setViewImage] = useState("none");
   const productDescription =
     "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging";
   const productImage = airPods;
@@ -88,7 +90,18 @@ function ReviewSubmitForm() {
     setStar4(emptyStar);
     setStar5(emptyStar);
     setHighlightedIds("");
+    setImageUploaded(null);
+    setViewImage("none");
+
     alert("Review has been successfully submitted!");
+  };
+
+  const imageUpload = (event) => {
+    if (event.target.files[0]) {
+      const preview = URL.createObjectURL(event.target.files[0]);
+      setImageUploaded(preview);
+      setViewImage("flex");
+    }
   };
 
   return (
@@ -181,12 +194,18 @@ function ReviewSubmitForm() {
             </p>
             <label className="review-form__add-media-label" htmlFor="add-media">
               <span className="review-form__add-media-placeholder">+</span>
+              <img
+                className="review-form__image-preview"
+                src={imageUploaded}
+                style={{ display: viewImage }}
+              />
             </label>
             <input
               className="review-form__add-media-input"
               id="add-media"
               type="file"
               accept="image/*"
+              onChange={imageUpload}
             />
           </div>
           <div className="review-form__section review-form__section--4">
