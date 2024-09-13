@@ -1,0 +1,18 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.buy-product {
+  width: 15.25rem;
+  border: 1px solid #d5d9d9;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  &__deliver {
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
