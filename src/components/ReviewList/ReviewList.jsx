@@ -30,7 +30,7 @@ function ReviewList() {
 
   const fetchKeywords = async () => {
     try {
-      let response = await axios.get(apiUrl + "/product/keywords")
+      let response = await axios.get(apiUrl + "/keywords")
       setFullKeywords(response.data)
       let fullKeywordArray = response.data
       let keywordArray = []
@@ -50,7 +50,7 @@ function ReviewList() {
   const fetchKeywordReviews = async () => {
     try {
       if (keywordFilter !== "none") {
-        let response = await axios.get(apiUrl + `/product/keywords/${keywordFilter}`)
+        let response = await axios.get(apiUrl + `/keywords/${keywordFilter}`)
         setKeywordReviews(response.data)
       }
     } catch (error) {
