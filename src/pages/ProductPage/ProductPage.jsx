@@ -1,9 +1,9 @@
-import './ProductPage.scss';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import React from 'react';
-import ReviewList from '../../components/ReviewList/ReviewList';
-import KeywordBreakdown from '../../components/KeywordBreakdown/KeywordBreakdown';
+import "./ProductPage.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import React from "react";
+import ReviewList from "../../components/ReviewList/ReviewList";
+import KeywordBreakdown from "../../components/KeywordBreakdown/KeywordBreakdown";
 
 function ProductPage() {
   const [keywords, setKeywords] = useState([]);
@@ -25,7 +25,7 @@ function ProductPage() {
 
   return (
     <>
-      <h1>Product Page</h1>
+      {/* <h1>Product Page</h1> */}
       <div className="content-container">
         {keywords.length > 0 ? (
           <KeywordBreakdown keywords={keywords} />
