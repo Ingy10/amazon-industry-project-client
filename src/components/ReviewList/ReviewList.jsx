@@ -1,48 +1,30 @@
 import './ReviewList.scss'
 import Review from '../Review/Review'
-import { useState } from 'react';
+import axios from 'axios'
+import { useEffect, useState } from 'react';
 
 function ReviewList() {
 
-  const array = [
-    {
-      id: 1,
-      username: "Jesse",
-      rating: 5,
-      title: "Exceeded expectations",
-      timestamp: 1724917365000,
-      verified_purchase: true,
-      vine_reviewer: true,
-      helpful_vote: 18,
-      text: "I'll start by saying that I previously owned a pair of original AirPods for several years, and while they served me well, I felt it was time for an upgrade. Enter the AirPods Pro—an extraordinary improvement in every way. The first thing that struck me was the sound quality. It's a massive leap from the original AirPods, offering rich, deep bass that adds a new dimension to my favorite tracks. The highs are beautifully crisp, bringing out details in music that I hadn't noticed before. Another standout feature is the noise cancellation. Whether I'm on a noisy commute or in a crowded café, the AirPods Pro do an impressive job of muting the background noise, allowing me to fully immerse myself in the audio experience. The transparency mode is equally impressive, seamlessly letting in outside sounds when needed without having to remove the earbuds. The fit of the AirPods Pro is another significant upgrade. The customizable ear tips make them much more comfortable for extended wear, and they stay secure even during workouts. I never had that with the original AirPods, which would occasionally slip out. Battery life is solid, and the wireless charging case is a convenient bonus. The overall build quality feels premium, with a sleek design that continues the minimalist aesthetic Apple is known for. In short, the AirPods Pro have exceeded my expectations in every way. They’re a must-have for anyone looking to elevate their audio experience, whether you’re upgrading from the original AirPods or new to the Apple ecosystem. Highly recommended.",
-    },
-    {
-      id: 2,
-      username: "Jesse",
-      rating: 4,
-      title: "Exceeded expectations",
-      timestamp: 1722917364000,
-      verified_purchase: true,
-      vine_reviewer: false,
-      helpful_vote: 24,
-      text: "I'll start by saying that I previously owned a pair of original AirPods for several years, and while they served me well, I felt it was time for an upgrade. Enter the AirPods Pro—an extraordinary improvement in every way. The first thing that struck me was the sound quality. It's a massive leap from the original AirPods, offering rich, deep bass that adds a new dimension to my favorite tracks. The highs are beautifully crisp, bringing out details in music that I hadn't noticed before. Another standout feature is the noise cancellation. Whether I'm on a noisy commute or in a crowded café, the AirPods Pro do an impressive job of muting the background noise, allowing me to fully immerse myself in the audio experience. The transparency mode is equally impressive, seamlessly letting in outside sounds when needed without having to remove the earbuds. The fit of the AirPods Pro is another significant upgrade. The customizable ear tips make them much more comfortable for extended wear, and they stay secure even during workouts. I never had that with the original AirPods, which would occasionally slip out. Battery life is solid, and the wireless charging case is a convenient bonus. The overall build quality feels premium, with a sleek design that continues the minimalist aesthetic Apple is known for. In short, the AirPods Pro have exceeded my expectations in every way. They’re a must-have for anyone looking to elevate their audio experience, whether you’re upgrading from the original AirPods or new to the Apple ecosystem. Highly recommended.",
-    },
-    {
-      id: 3,
-      username: "Jesse",
-      rating: 3.5,
-      title: "Exceeded expectations",
-      timestamp: 1725917368000,
-      verified_purchase: false,
-      vine_reviewer: false,
-      helpful_vote: 3,
-      text: "I'll start by saying that I previously owned a pair of original AirPods for several years, and while they served me well, I felt it was time for an upgrade. Enter the AirPods Pro—an extraordinary improvement in every way. The first thing that struck me was the sound quality. It's a massive leap from the original AirPods, offering rich, deep bass that adds a new dimension to my favorite tracks. The highs are beautifully crisp, bringing out details in music that I hadn't noticed before. Another standout feature is the noise cancellation. Whether I'm on a noisy commute or in a crowded café, the AirPods Pro do an impressive job of muting the background noise, allowing me to fully immerse myself in the audio experience. The transparency mode is equally impressive, seamlessly letting in outside sounds when needed without having to remove the earbuds. The fit of the AirPods Pro is another significant upgrade. The customizable ear tips make them much more comfortable for extended wear, and they stay secure even during workouts. I never had that with the original AirPods, which would occasionally slip out. Battery life is solid, and the wireless charging case is a convenient bonus. The overall build quality feels premium, with a sleek design that continues the minimalist aesthetic Apple is known for. In short, the AirPods Pro have exceeded my expectations in every way. They’re a must-have for anyone looking to elevate their audio experience, whether you’re upgrading from the original AirPods or new to the Apple ecosystem. Highly recommended.",
-    }
-  ]
+  const apiUrl = `${import.meta.env.VITE_API_URL}`;
 
+  const [reviewData, setReviewData] = useState([])
   const [sortMethod, setSortMethod] = useState("top")
   const [filterMethod, setFilterMethod] = useState("none")
-  const [filterParameter, setFilterParmeter] = useState(true)
+  const [filterParameter, setFilterParmeter] = useState(1)
+
+  // API GET Function
+  const fetchReviews = async () => {
+    try {
+      let response = await axios.get(apiUrl + "/product")
+      setReviewData(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
 
   // Filter Function (Will change with what filter user picks)
   const filterFunction = (filter, param) => {
@@ -89,7 +71,7 @@ function ReviewList() {
           </select>
         </form>
         {
-          array.filter(filterFunction(filterMethod, true)).sort(sortFunction(sortMethod)).map((review) => (
+          reviewData.filter(filterFunction(filterMethod, filterParameter)).sort(sortFunction(sortMethod)).map((review) => (
             <Review key={review.id} data={review} />
           ))
         }
