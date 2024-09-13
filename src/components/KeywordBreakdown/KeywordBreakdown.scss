@@ -1,0 +1,11 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.keyword-breakdown {
+  width: 18.75rem;
+  border-bottom: 1px solid $cloud;
+
+  &__header {
+    font-size: 1.313rem;
+  }
+}
