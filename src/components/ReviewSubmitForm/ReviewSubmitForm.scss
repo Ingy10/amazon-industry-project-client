@@ -52,7 +52,6 @@
   }
   &__stars {
     display: flex;
-    // gap: 0.3rem;
   }
   &__star-input {
     display: none;
@@ -99,7 +98,7 @@
     padding-bottom: 2rem;
   }
   &__keywords {
-    border: 1px solid $grey;
+    border: 2px solid $grey;
     border-radius: 6px;
     padding: 0.5rem;
     flex: 1 1 150px;
@@ -109,6 +108,12 @@
     align-items: center;
     text-wrap: nowrap;
     cursor: pointer;
+    &--highlighted {
+      border-width: 2px;
+      border-color: #007185;
+      color: #007185;
+      background-color: #e2fbff;
+    }
   }
   &__review-description {
     outline: none;
@@ -123,7 +128,6 @@
     }
   }
   &__button-container {
-    // border: 1px solid red;
     display: flex;
     width: 100%;
     justify-content: flex-end;

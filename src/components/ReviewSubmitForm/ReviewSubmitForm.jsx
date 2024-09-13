@@ -2,8 +2,15 @@ import "./ReviewSubmitForm.scss";
 import airPods from "../../assets/images/airpod.png";
 import emptyStar from "../../assets/icons/empty-star.png";
 import fullStar from "../../assets/icons/full-star.png";
+import { useState } from "react";
 
 function ReviewSubmitForm() {
+  const [star1, setStar1] = useState(emptyStar);
+  const [star2, setStar2] = useState(emptyStar);
+  const [star3, setStar3] = useState(emptyStar);
+  const [star4, setStar4] = useState(emptyStar);
+  const [star5, setStar5] = useState(emptyStar);
+  const [highlightedIds, setHighlightedIds] = useState("");
   const productDescription =
     "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging";
   const productImage = airPods;
@@ -28,6 +35,50 @@ function ReviewSubmitForm() {
     { id: 6, word: "Durability" },
   ];
 
+  const highlight = (id) => {
+    setHighlightedIds((prevHighlightedIds) =>
+      prevHighlightedIds.includes(id)
+        ? prevHighlightedIds.filter((itemId) => itemId !== id)
+        : [...prevHighlightedIds, id]
+    );
+  };
+
+  const clickStar1 = () => {
+    setStar1(fullStar);
+    setStar2(emptyStar);
+    setStar3(emptyStar);
+    setStar4(emptyStar);
+    setStar5(emptyStar);
+  };
+  const clickStar2 = () => {
+    setStar1(fullStar);
+    setStar2(fullStar);
+    setStar3(emptyStar);
+    setStar4(emptyStar);
+    setStar5(emptyStar);
+  };
+  const clickStar3 = () => {
+    setStar1(fullStar);
+    setStar2(fullStar);
+    setStar3(fullStar);
+    setStar4(emptyStar);
+    setStar5(emptyStar);
+  };
+  const clickStar4 = () => {
+    setStar1(fullStar);
+    setStar2(fullStar);
+    setStar3(fullStar);
+    setStar4(fullStar);
+    setStar5(emptyStar);
+  };
+  const clickStar5 = () => {
+    setStar1(fullStar);
+    setStar2(fullStar);
+    setStar3(fullStar);
+    setStar4(fullStar);
+    setStar5(fullStar);
+  };
+
   return (
     <>
       <section className="review-form">
@@ -50,9 +101,10 @@ function ReviewSubmitForm() {
                 type="radio"
                 name="stars"
                 value="1"
+                onClick={clickStar1}
               />
               <label htmlFor="star1" className="review-form__star">
-                <img className="review-form__star-image" src={emptyStar} />
+                <img className="review-form__star-image" src={star1} />
               </label>
               <input
                 className="review-form__star-input"
@@ -60,9 +112,10 @@ function ReviewSubmitForm() {
                 type="radio"
                 name="stars"
                 value="2"
+                onClick={clickStar2}
               />
               <label htmlFor="star2" className="review-form__star">
-                <img className="review-form__star-image" src={emptyStar} />
+                <img className="review-form__star-image" src={star2} />
               </label>
               <input
                 className="review-form__star-input"
@@ -70,9 +123,10 @@ function ReviewSubmitForm() {
                 type="radio"
                 name="stars"
                 value="3"
+                onClick={clickStar3}
               />
               <label htmlFor="star3" className="review-form__star">
-                <img className="review-form__star-image" src={emptyStar} />
+                <img className="review-form__star-image" src={star3} />
               </label>
               <input
                 className="review-form__star-input"
@@ -80,9 +134,10 @@ function ReviewSubmitForm() {
                 type="radio"
                 name="stars"
                 value="4"
+                onClick={clickStar4}
               />
               <label htmlFor="star4" className="review-form__star">
-                <img className="review-form__star-image" src={emptyStar} />
+                <img className="review-form__star-image" src={star4} />
               </label>
               <input
                 className="review-form__star-input"
@@ -90,9 +145,10 @@ function ReviewSubmitForm() {
                 type="radio"
                 name="stars"
                 value="5"
+                onClick={clickStar5}
               />
               <label htmlFor="star5" className="review-form__star">
-                <img className="review-form__star-image" src={emptyStar} />
+                <img className="review-form__star-image" src={star5} />
               </label>
             </label>
             <h3 className="review-form__subtitle review-form__subtitle--headline">
@@ -127,7 +183,15 @@ function ReviewSubmitForm() {
             </h3>
             <ul className="review-form__keywords-wrapper">
               {keywords.map((keyword) => (
-                <li className="review-form__keywords" key={keyword.id}>
+                <li
+                  className={`review-form__keywords ${
+                    highlightedIds.includes(keyword.id)
+                      ? "review-form__keywords--highlighted"
+                      : ""
+                  }`}
+                  key={keyword.id}
+                  onClick={() => highlight(keyword.id)}
+                >
                   {keyword.word}
                 </li>
               ))}
