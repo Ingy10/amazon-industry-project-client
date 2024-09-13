@@ -1,7 +1,7 @@
 import "./Review.scss";
 
-function Review() {
-  const data = {
+function Review({ data }) {
+  const data2 = {
     username: "Jesse",
     rating: 5,
     title: "Exceeded expectations",
