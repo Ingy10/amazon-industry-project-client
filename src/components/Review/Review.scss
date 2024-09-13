@@ -1,0 +1,73 @@
+@use "../../styles/partials/mixins" as *;
+
+.review {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    &__poster, &__heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    &__avatar {
+        width: 30px;
+        height: 30px;
+        background-color: #a9b7b8;
+        border-radius: 50%;
+    }
+
+    &__username {
+        margin: 0;
+        padding-left: 1rem;
+    }
+
+    &__rating {
+        margin: 0;
+        padding-right: 1rem;
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    &__timestamp {
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    &__verified {
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-weight: bold;
+        color: #c45500;
+        font-size: 0.875rem;
+    }
+
+    &__comment {
+        margin: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    &__helpful-count {
+        margin: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.75rem;
+    }
+
+    &__like {
+        background-color: white;
+        width: 7rem;
+        padding: 6px;
+        border: 1px gray solid;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+}
