@@ -1,5 +1,6 @@
-import Stars from "../Stars/Stars";
 import "./Review.scss";
+import Stars from "../Stars/Stars";
+import vine_badge from '../../assets/icons/prime__reviewer__badge.png'
 
 function Review({ data }) {
 
@@ -13,10 +14,15 @@ function Review({ data }) {
   }
 
   let verified = <></>
+  let badge = <></>
 
   if (data.verified_purchase === 1) {
     verified = <p className="review__verified">Verified Purchase</p>
   } 
+
+  if (data.vine_reviewer) {
+    badge = <img src={vine_badge} alt="vine reviewer badge" className="review__vine" />
+  }
 
   return (
     <>
@@ -24,6 +30,7 @@ function Review({ data }) {
         <div className="review__poster">
           <div className="review__avatar"></div>
           <p className="review__username">{data.user_name}</p>
+          {badge}
         </div>
         <div className="review__heading">
           <div className="review__rating"><Stars num={data.rating} /> </div>

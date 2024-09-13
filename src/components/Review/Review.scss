@@ -21,7 +21,11 @@
 
     &__username {
         margin: 0;
-        padding-left: 1rem;
+        padding-left: 0.5rem;
+    }
+
+    &__vine {
+        padding-left: 0.375rem;
     }
 
     &__rating {
