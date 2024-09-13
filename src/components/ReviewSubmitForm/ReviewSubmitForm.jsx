@@ -79,6 +79,18 @@ function ReviewSubmitForm() {
     setStar5(fullStar);
   };
 
+  const submit = (event) => {
+    event.preventDefault();
+    event.target.reset();
+    setStar1(emptyStar);
+    setStar2(emptyStar);
+    setStar3(emptyStar);
+    setStar4(emptyStar);
+    setStar5(emptyStar);
+    setHighlightedIds("");
+    alert("Review has been successfully submitted!");
+  };
+
   return (
     <>
       <section className="review-form">
@@ -91,7 +103,7 @@ function ReviewSubmitForm() {
             <p className="review-form__description">{productDescription}</p>
           </div>
         </div>
-        <form className="review-form__form">
+        <form className="review-form__form" onSubmit={submit}>
           <div className="review-form__section review-form__section--2">
             <h3 className="review-form__subtitle">Overall Rating</h3>
             <label className="review-form__stars">
