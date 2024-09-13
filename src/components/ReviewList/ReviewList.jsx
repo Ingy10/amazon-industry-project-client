@@ -15,7 +15,7 @@ function ReviewList() {
     },
     {
       username: "Jesse",
-      rating: 6,
+      rating: 4,
       title: "Exceeded expectations",
       date: "August 29, 2024",
       verified_purchase: true,
@@ -24,7 +24,7 @@ function ReviewList() {
     },
     {
       username: "Jesse",
-      rating: 7,
+      rating: 3.5,
       title: "Exceeded expectations",
       date: "August 29, 2024",
       verified_purchase: true,
@@ -37,7 +37,7 @@ function ReviewList() {
     <>
         <h3 className="review-list__title">Reviews from the United States</h3>
         {
-          array.filter((review) => review.rating >= 6).map((review) => (
+          array.filter((review) => review.rating >= 3).map((review) => (
             <Review data={review} />
           ))
         }

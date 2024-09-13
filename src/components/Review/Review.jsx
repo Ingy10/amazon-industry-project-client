@@ -1,3 +1,4 @@
+import Stars from "../Stars/Stars";
 import "./Review.scss";
 
 function Review({ data }) {
@@ -25,7 +26,7 @@ function Review({ data }) {
           <p className="review__username">{data.username}</p>
         </div>
         <div className="review__heading">
-          <div className="review__rating">{data.rating} Stars</div>
+          <div className="review__rating"><Stars num={data.rating} /> </div>
           <p className="review__title">{data.title}</p>
         </div>
         <p className="review__timestamp">Reviewed in the United States on {data.date}</p>
