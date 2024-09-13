@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+
+.review-list {
+
+    &__title {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    &__dropdowns {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 1rem;
+    }
+}
