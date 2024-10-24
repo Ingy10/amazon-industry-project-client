@@ -29,17 +29,17 @@ View Project Details on LinkedIn.  (**Scroll down to Amazon Industry Project.**)
 BrainStation students collaborating across disciplines:
 
 - **Software Engineering**
-  - Kyle Ingham
-  - Nico Reincheld
-  - Howard Huang
+  - [Kyle Ingham](https://www.linkedin.com/in/kyle-ingham/)
+  - [Nico Reincheld](https://www.linkedin.com/in/nico-reincheld/)
+  - [Howard Huang](https://www.linkedin.com/in/howard-huang-z/)
 - **UX/UI Design**
-  - Arjun Achuthan
-  - Robab Syeda
+  - [Arjun Achuthan](https://www.linkedin.com/in/arjunachuthan/)
+  - [Robab Syeda](https://www.linkedin.com/in/robabsyeda/)
 - **Data Science**
-  - Samuel Ferrer
+  - [Samuel Ferrer](https://www.linkedin.com/in/samuel-ferrer-g/)
   - Joe Cha
 - **Cybersecurity**
-  - Rohan Shah
+  - [Rohan Shah](https://www.linkedin.com/in/rohaniat/)
 
 ## 🛠️ Tech Stack
 
@@ -128,7 +128,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 For more information about this project, contact:
 Kyle Ingham
-- [LinkedIn]((https://www.linkedin.com/in/kyle-ingham/)
+- [LinkedIn](https://www.linkedin.com/in/kyle-ingham/)
   
 ---
 
